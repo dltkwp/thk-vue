@@ -5,7 +5,7 @@
 import request from '@/utils/request'
 
 /**
- * 查询产品列表数据接口
+ * 查询列表数据接口
  * @param {查询条件} query
  */
 export function FetchProducts(query) {
@@ -17,8 +17,8 @@ export function FetchProducts(query) {
 }
 
 /**
- * 新增产品接口
- * @param {基本产品信息} product
+ * 新增接口
+ * @param {基本信息} product
  */
 export function SaveProduct(product) {
   return request({
@@ -29,9 +29,9 @@ export function SaveProduct(product) {
 }
 
 /**
- * 更新产品信息
- * @param {待更新的产品信息} product
- * @param {产品Id} productId
+ * 更新信息
+ * @param {待更新的信息} product
+ * @param {Id} productId
  */
 export function UpdateProduct(product, productId) {
   return request({
@@ -42,9 +42,9 @@ export function UpdateProduct(product, productId) {
 }
 
 /**
- * 更新产品状态接口
- * @param {产品状态} status
- * @param {商品ID} productId
+ * 更新状态接口
+ * @param {状态} status
+ * @param {Id} productId
  */
 export function UpdateProductStatus(status, productId) {
   return request({
