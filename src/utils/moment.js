@@ -1,6 +1,6 @@
 import moment from 'moment'
 export default {
-  install: function (Vue) {
+  install: (Vue) => {
     Object.defineProperty(Vue.prototype, '$moment', { value: moment })
   }
 }

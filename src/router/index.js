@@ -24,48 +24,33 @@ import Layout from '../views/layout/Layout'
 export const constantRouterMap = [
   { path: '/login', component: () => import('@/views/login/index'), hidden: true },
   { path: '/404', component: () => import('@/views/404'), hidden: true },
-
   {
     path: '/',
     component: Layout,
     redirect: '/dashboard',
     name: 'Dashboard',
-    hidden: true,
+    meta: { title: '首页' },
     children: [{
       path: 'dashboard',
-      component: () => import('@/views/dashboard/index')
+      meta: { title: '首页' },
+      component: () => import('@/views/index')
     }]
   },
-
   {
-    path: '/example',
+    path: '/product',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'example' },
+    alwaysShow: true,
+    name: 'Product',
+    meta: { title: '商品管理' },
     children: [
       {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        path: 'list',
+        name: 'ProductList',
+        component: () => import('@/views/product/productList'),
+        meta: { title: '商品列表' }
       }
     ]
   },
-
-  {
-    path: '/form',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
-      }
-    ]
-  },
-
   { path: '*', redirect: '/404', hidden: true }
 ]
 
