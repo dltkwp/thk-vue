@@ -25,19 +25,18 @@ export const constantRouterMap = [
   { path: '/login', component: () => import('@/views/login/index'), hidden: true },
   { path: '/404', component: () => import('@/views/404'), hidden: true },
   {
-    path: '/',
+    path: '',
     component: Layout,
-    redirect: '/dashboard',
-    name: 'Dashboard',
-    meta: { title: '首页' },
+    redirect: 'dashboard',
     children: [{
       path: 'dashboard',
-      meta: { title: '首页' },
-      component: () => import('@/views/index')
+      component: () => import('@/views/index'),
+      name: 'Dashboard',
+      meta: { title: '首页', noCache: true }
     }]
   },
   {
-    path: '/product',
+    path: '/product', // 主要是 主文件夹的名称
     component: Layout,
     alwaysShow: true,
     name: 'Product',
@@ -48,8 +47,25 @@ export const constantRouterMap = [
         name: 'ProductList',
         component: () => import('@/views/product/productList'),
         meta: { title: '商品列表' }
+      },
+      { // 举个栗子
+        path: 'config', // 期望的访问的地址
+        name: 'ProductConfig', // 这个位置必须唯一
+        component: () => import('@/views/product/productConfig'), // 页面地址，一般命名规则:主模块文件夹/功能模块的文件夹（最好带上主文件模块的名称，为了调试）
+        meta: { title: '商品设置' }
       }
     ]
+  },
+  { // 订单模块的路由设置
+    path: '/order',
+    component: Layout,
+    redirect: 'dashboard',
+    children: [{
+      path: 'order/list',
+      component: () => import('@/views/order/orderList'),
+      name: 'Order',
+      meta: { title: '订单列表', noCache: true }
+    }]
   },
   { path: '*', redirect: '/404', hidden: true }
 ]
