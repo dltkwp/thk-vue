@@ -15,6 +15,14 @@ import store from './store'
 import '@/icons' // icon
 import '@/permission' // permission control
 
+/**
+ * 引入 momentJs 和 lodashJs
+ */
+import LodashPlugin from './lodash.js'
+import MomentPlugin from './moment.js'
+
+Vue.use(LodashPlugin)
+Vue.use(MomentPlugin)
 Vue.use(ElementUI, { locale })
 
 Vue.config.productionTip = false
