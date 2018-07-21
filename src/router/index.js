@@ -105,7 +105,7 @@ export const constantRouterMap = [
   {
     path: '/setting', // 主要是 主文件夹的名称
     component: Layout,
-    alwaysShow: true,
+    redirect: 'noredirect',
     name: 'Setting',
     meta: { title: '设置' },
     children: [
