@@ -1,6 +1,6 @@
 <template>
     <el-main>
-        会员管理
+        会员设置
 
     </el-main>
 </template>

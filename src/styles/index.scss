@@ -3,6 +3,7 @@
 @import './transition.scss';
 @import './element-ui.scss';
 @import './sidebar.scss';
+@import './mar-pad.scss';
 
 body {
   height: 100%;
@@ -75,4 +76,38 @@ a:hover {
 
 .app-container {
   padding: 20px;
+}
+
+//input 宽度定义
+.input-medium{
+  width:240px;
+}
+.input-large{
+  width:350px;
+}
+.input-xlarge{
+  width:450px;
+}
+
+//text部署
+.text-left{
+  text-align: left;
+}
+.text-right{
+  text-align: right;
+}
+.text-center{
+  text-align: center;
+}
+
+.el-select .el-input {
+  width: 100px;
+}
+.input-with-select .el-input-group__prepend {
+  background-color: #fff;
+}
+
+.table{
+  width:100%;
+ @extend .mar-t-md;
 }

@@ -1,5 +1,6 @@
 <template>
     <el-main>
+        商品管理
 
     </el-main>
 </template>
@@ -10,7 +11,3 @@ export default {
 
 }
 </script>
-
-<style>
-
-</style>

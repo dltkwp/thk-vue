@@ -35,27 +35,6 @@ export const constantRouterMap = [
       meta: { title: '首页', noCache: true }
     }]
   },
-  {
-    path: '/product', // 主要是 主文件夹的名称
-    component: Layout,
-    alwaysShow: true,
-    name: 'Product',
-    meta: { title: '商品管理' },
-    children: [
-      {
-        path: 'list',
-        name: 'ProductList',
-        component: () => import('@/views/product/productList'),
-        meta: { title: '商品列表' }
-      },
-      { // 举个栗子
-        path: 'config', // 期望的访问的地址
-        name: 'ProductConfig', // 这个位置必须唯一
-        component: () => import('@/views/product/productConfig'), // 页面地址，一般命名规则:主模块文件夹/功能模块的文件夹（最好带上主文件模块的名称，为了调试）
-        meta: { title: '商品设置' }
-      }
-    ]
-  },
   { // 订单模块的路由设置
     path: '/order',
     component: Layout,
@@ -64,8 +43,97 @@ export const constantRouterMap = [
       path: 'order/list',
       component: () => import('@/views/order/orderList'),
       name: 'Order',
-      meta: { title: '订单列表', noCache: true }
+      meta: { title: '订单管理', noCache: true }
     }]
+  },
+  { // 商品管理的路由设置
+    path: '/product',
+    component: Layout,
+    redirect: 'dashboard',
+    children: [{
+      path: 'product/list',
+      component: () => import('@/views/product/productList'),
+      name: 'Product',
+      meta: { title: '商品管理', noCache: true }
+    }]
+  },
+  { // 会员管理的路由设置
+    path: '/member',
+    component: Layout,
+    redirect: 'dashboard',
+    children: [{
+      path: 'member/list',
+      component: () => import('@/views/member/memberList'),
+      name: 'Member',
+      meta: { title: '会员管理', noCache: true }
+    }]
+  },
+  { // 成员管理的路由设置
+    path: '/employee',
+    component: Layout,
+    redirect: 'dashboard',
+    children: [{
+      path: 'employee/list',
+      component: () => import('@/views/employee/employeeList'),
+      name: 'Employee',
+      meta: { title: '成员管理', noCache: true }
+    }]
+  },
+  { // 店铺公告的路由设置
+    path: '/news',
+    component: Layout,
+    redirect: 'dashboard',
+    children: [{
+      path: 'news/list',
+      component: () => import('@/views/news/newsList'),
+      name: 'Employee',
+      meta: { title: '店铺公告', noCache: true }
+    }]
+  },
+
+  { // 首页管理的路由设置
+    path: '/dashboard',
+    component: Layout,
+    redirect: 'dashboard',
+    children: [{
+      path: 'dashboard/dashboard',
+      component: () => import('@/views/dashboard/dashboard'),
+      name: 'Dashboard',
+      meta: { title: '店铺装修', noCache: true }
+    }]
+  },
+  {
+    path: '/setting', // 主要是 主文件夹的名称
+    component: Layout,
+    alwaysShow: true,
+    name: 'Setting',
+    meta: { title: '设置' },
+    children: [
+      {
+        path: 'shopinfo',
+        name: 'ShopInfo',
+        component: () => import('@/views/setting/shopInfo'),
+        meta: { title: '店铺信息' }
+      },
+      { 
+        path: 'member', // 期望的访问的地址
+        name: 'MemberConfig', // 这个位置必须唯一
+        component: () => import('@/views/setting/memberConfig'), // 页面地址，一般命名规则:主模块文件夹/功能模块的文件夹（最好带上主文件模块的名称，为了调试）
+        meta: { title: '会员设置' }
+      },
+      { 
+        path: 'type', // 期望的访问的地址
+        name: 'typeConfig', // 这个位置必须唯一
+        component: () => import('@/views/setting/typeConfig'), // 页面地址，一般命名规则:主模块文件夹/功能模块的文件夹（最好带上主文件模块的名称，为了调试）
+        meta: { title: '分类设置' }
+      },
+      { 
+        path: 'finance', // 期望的访问的地址
+        name: 'financeConfig', // 这个位置必须唯一
+        component: () => import('@/views/setting/financeConfig'), // 页面地址，一般命名规则:主模块文件夹/功能模块的文件夹（最好带上主文件模块的名称，为了调试）
+        meta: { title: '财务设置' }
+      }
+    ]
   },
   { path: '*', redirect: '/404', hidden: true }
 ]

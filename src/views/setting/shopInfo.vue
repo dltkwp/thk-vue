@@ -1,6 +1,6 @@
 <template>
     <el-main>
-        会员管理
+        店铺信息
 
     </el-main>
 </template>
