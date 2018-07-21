@@ -115,19 +115,19 @@ export const constantRouterMap = [
         component: () => import('@/views/setting/shopInfo'),
         meta: { title: '店铺信息' }
       },
-      { 
+      {
         path: 'member', // 期望的访问的地址
         name: 'MemberConfig', // 这个位置必须唯一
         component: () => import('@/views/setting/memberConfig'), // 页面地址，一般命名规则:主模块文件夹/功能模块的文件夹（最好带上主文件模块的名称，为了调试）
         meta: { title: '会员设置' }
       },
-      { 
+      {
         path: 'type', // 期望的访问的地址
         name: 'typeConfig', // 这个位置必须唯一
         component: () => import('@/views/setting/typeConfig'), // 页面地址，一般命名规则:主模块文件夹/功能模块的文件夹（最好带上主文件模块的名称，为了调试）
         meta: { title: '分类设置' }
       },
-      { 
+      {
         path: 'finance', // 期望的访问的地址
         name: 'financeConfig', // 这个位置必须唯一
         component: () => import('@/views/setting/financeConfig'), // 页面地址，一般命名规则:主模块文件夹/功能模块的文件夹（最好带上主文件模块的名称，为了调试）
