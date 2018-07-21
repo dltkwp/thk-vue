@@ -31,7 +31,7 @@ export const constantRouterMap = [
     children: [{
       path: 'dashboard',
       component: () => import('@/views/index'),
-      name: 'Dashboard',
+      name: 'Index',
       meta: { title: '首页', noCache: true }
     }]
   },
@@ -86,7 +86,7 @@ export const constantRouterMap = [
     children: [{
       path: 'news/list',
       component: () => import('@/views/news/newsList'),
-      name: 'Employee',
+      name: 'News',
       meta: { title: '店铺公告', noCache: true }
     }]
   },
@@ -123,18 +123,19 @@ export const constantRouterMap = [
       },
       {
         path: 'type', // 期望的访问的地址
-        name: 'typeConfig', // 这个位置必须唯一
+        name: 'TypeConfig', // 这个位置必须唯一
         component: () => import('@/views/setting/typeConfig'), // 页面地址，一般命名规则:主模块文件夹/功能模块的文件夹（最好带上主文件模块的名称，为了调试）
         meta: { title: '分类设置' }
       },
       {
         path: 'finance', // 期望的访问的地址
-        name: 'financeConfig', // 这个位置必须唯一
+        name: 'FinanceConfig', // 这个位置必须唯一
         component: () => import('@/views/setting/financeConfig'), // 页面地址，一般命名规则:主模块文件夹/功能模块的文件夹（最好带上主文件模块的名称，为了调试）
         meta: { title: '财务设置' }
       }
     ]
   },
+  // 这个节点不能改变位置，只能放到最后
   { path: '*', redirect: '/404', hidden: true }
 ]
 
