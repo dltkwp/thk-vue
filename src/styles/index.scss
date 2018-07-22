@@ -4,7 +4,6 @@
 @import './element-ui.scss';
 @import './sidebar.scss';
 @import './mar-pad.scss';
-
 body {
   height: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -22,7 +21,7 @@ html {
   box-sizing: border-box;
 }
 
-#app{
+#app {
   height: 100%;
 }
 
@@ -41,9 +40,9 @@ a:hover {
   text-decoration: none;
 }
 
-div:focus{
+div:focus {
   outline: none;
- }
+}
 
 a:focus,
 a:active {
@@ -70,7 +69,7 @@ a:hover {
 }
 
 //main-container全局样式
-.app-main{
+.app-main {
   min-height: 100%
 }
 
@@ -79,35 +78,109 @@ a:hover {
 }
 
 //input 宽度定义
-.input-medium{
-  width:240px;
+.input-medium {
+  width: 240px;
 }
-.input-large{
-  width:350px;
+
+.input-large {
+  width: 350px;
 }
-.input-xlarge{
-  width:450px;
+
+.input-xlarge {
+  width: 450px;
 }
 
 //text部署
-.text-left{
+.text-left {
   text-align: left;
 }
-.text-right{
+
+.text-right {
   text-align: right;
 }
-.text-center{
+
+.text-center {
   text-align: center;
 }
 
 .el-select .el-input {
   width: 100px;
 }
+
 .input-with-select .el-input-group__prepend {
   background-color: #fff;
 }
 
-.table{
-  width:100%;
- @extend .mar-t-md;
+.table {
+  width: 100%;
+  @extend .mar-t-md;
+}
+
+.img-md {
+  width: 60px;
+}
+
+//media
+.media {
+  // Proper spacing between instances of .media
+  margin-top: 15px;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.media,
+.media-body {
+  zoom: 1;
+  overflow: hidden;
+}
+
+.media-body {
+  width: 10000px;
+}
+
+.media-object {
+  display: block; // Fix collapse in webkit from max-width: 100% and display: table-cell.
+  &.img-thumbnail {
+    max-width: none;
+  }
+}
+
+.media-right,
+.media>.pull-right {
+  padding-left: 10px;
+}
+
+.media-left,
+.media>.pull-left {
+  padding-right: 10px;
+}
+
+.media-left,
+.media-right,
+.media-body {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.media-middle {
+  vertical-align: middle;
+}
+
+.media-bottom {
+  vertical-align: bottom;
+}
+
+// Reset margins on headings for tighter default spacing
+.media-heading {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+// Media list variation
+//
+// Undo default ul/ol styles
+.media-list {
+  padding-left: 0;
+  list-style: none;
 }

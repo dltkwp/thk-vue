@@ -1,7 +1,7 @@
 <template>
     <el-main>
         <el-row type="flex" justify="space-between">
-            <el-col>
+            <el-col :span="8">
                 <el-button size="medium">导出</el-button>
             </el-col>
             <el-col class="text-right" :span="16">
@@ -19,19 +19,22 @@
                 <el-button size="medium">高级搜索</el-button>
             </el-col>
         </el-row>
-        <template slot-scope="scope">
-            <el-table :data="ordertable" height="80vh" border class="table">
-            <el-table-column prop="num" label="#" width="80">  </el-table-column>
+        <el-row>
+        <template>
+            <el-table :data="ordertable" max-height="85vh" border class="table">
+            <el-table-column prop="num" label="#" width="50">  </el-table-column>
             <el-table-column prop="id" label="订单编号" width="100"> </el-table-column>
-            <el-table-column prop="time" label="下单时间" width="100"> </el-table-column>
+            <el-table-column prop="time" label="下单时间" width="150"> </el-table-column>
             <el-table-column prop="content" label="订单内容" width="300"> </el-table-column>
             <el-table-column prop="address" label="收获地址" width="200"> </el-table-column>
-            <el-table-column prop="payType" label="支付方式" width="200"> </el-table-column>
-            <el-table-column prop="state" label="订单状态"  width="150"> </el-table-column>
+            <el-table-column prop="payType" label="支付方式" width="100"> </el-table-column>
+            <el-table-column prop="state" label="订单状态"  width="100"> </el-table-column>
             <el-table-column prop="bak" label="备注"> </el-table-column>
             <el-table-column prop="control" label="操作" width="200"> </el-table-column>
             </el-table>
         </template>
+          
+        </el-row>
     </el-main>
 </template>
 
@@ -45,7 +48,7 @@
           num: '1',
           id: '000000001',
           time: '2018/07/01 12:20',
-          content: '<div>123<br>123</div>',
+          content: '<div>123123</div>',
           address: '王杰 15242612898<br>辽宁省大连市高新园区招商兰溪谷北区7号楼4单元302',
           payType: '微信',
           state: '待发货',
