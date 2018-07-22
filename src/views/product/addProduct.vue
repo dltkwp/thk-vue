@@ -1,7 +1,6 @@
 <template>
     <el-main>
-        会员管理
-
+        产品新增加
     </el-main>
 </template>
 

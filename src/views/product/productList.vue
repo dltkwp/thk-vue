@@ -14,7 +14,7 @@
                         <el-dropdown-item command="export" divided>导出</el-dropdown-item>
                     </el-dropdown-menu>
                 </el-dropdown>
-                <router-link to size="medium" type="primary" >新增商品</router-link>
+                <router-link to="/product/product/save" size="medium" type="primary" >新增商品</router-link>
             </el-col>
             <el-col class="text-right" :span="16">
                 <el-input size="medium" placeholder="商品名称/编号" v-model="type" class="input-with-select input-large">
@@ -79,46 +79,39 @@
 
 <script>
     export default {
-        data() {
-            return {
-                
-                type: '',
-                select: '',
-                productDate:[{
-                    id: '0000001',
-                    imgurl: 'https://cdns.mtscrm.com/Ft3wKNFME8MqOo7J5kaW8qizDKx8?cdnversion=mo-1-1-2018123071802',
-                    name: '高级理发',
-                    type: '默认分类',
-                    price: '¥100.00',
-                    cost: '¥60.00',
-                    stock: '500',
-                    state: '在售'
-                },{
-                    id: '0000002',
-                    imgurl: 'https://cdns.mtscrm.com/Ft3wKNFME8MqOo7J5kaW8qizDKx8?cdnversion=mo-1-1-2018123071802',
-                    name: '烫发',
-                    type: '默认分类1',
-                    price: '¥120.00',
-                    cost: '¥40.00',
-                    stock: '300',
-                    state: '停售'
-                },{
-                    id: '0000003',
-                    imgurl: 'https://cdns.mtscrm.com/Ft3wKNFME8MqOo7J5kaW8qizDKx8?cdnversion=mo-1-1-2018123071802',
-                    name: '洗剪吹',
-                    type: '默认分类1',
-                    price: '¥150.00',
-                    cost: '¥60.00',
-                    stock: '300',
-                    state: '开售'
-                }],
-                form: {
-                        type:[],
-                        state:[]
-                    }   
-            }
+      data() {
+        return {
+          type: '',
+          select: '',
+          productDate: [{
+            id: '0000001',
+            imgurl: 'https://cdns.mtscrm.com/Ft3wKNFME8MqOo7J5kaW8qizDKx8?cdnversion=mo-1-1-2018123071802',
+            name: '高级理发',
+            type: '默认分类',
+            price: '¥100.00',
+            cost: '¥60.00',
+            stock: '500',
+            state: '在售'
+          }, {
+            id: '0000002',
+            imgurl: 'https://cdns.mtscrm.com/Ft3wKNFME8MqOo7J5kaW8qizDKx8?cdnversion=mo-1-1-2018123071802',
+            name: '烫发',
+            type: '默认分类1',
+            price: '¥120.00',
+            cost: '¥40.00',
+            stock: '300',
+            state: '停售'
+          }, {
+            id: '0000003',
+            imgurl: 'https://cdns.mtscrm.com/Ft3wKNFME8MqOo7J5kaW8qizDKx8?cdnversion=mo-1-1-2018123071802',
+            name: '洗剪吹', type: '默认分类1', price: '¥150.00', cost: '¥60.00', stock: '300', state: '开售'
+          }],
+          form: {
+            type: [],
+            state: []
+          }
         }
-    
+      }
     }
 
 </script>
