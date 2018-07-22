@@ -27,7 +27,7 @@ Vue.use(ElementUI, { locale })
 
 Vue.config.productionTip = false
 
-import './filter/common'
+import './filter/index'
 
 new Vue({
   el: '#app',
