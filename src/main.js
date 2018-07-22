@@ -27,8 +27,7 @@ Vue.use(ElementUI, { locale })
 
 Vue.config.productionTip = false
 
-// 需要删除的代码
-import './mock' // simulation data
+import './filter/common'
 
 new Vue({
   el: '#app',
