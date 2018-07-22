@@ -53,7 +53,7 @@
                     <template slot-scope="scope">
                         <div class="media">
                             <div class="media-left">
-                                <img class="media-object img-md" src="https://cdns.mtscrm.com/Ft3wKNFME8MqOo7J5kaW8qizDKx8?cdnversion=mo-1-1-2018123071802" alt="...">
+                                <img class="media-object img-md" :src="scope.row.imgurl" alt="...">
                             </div>
                             <div class="media-body">
                                 <h4 class="media-heading">{{ scope.row.name }}</h4>
@@ -85,7 +85,7 @@
           select: '',
           productDate: [{
             id: '0000001',
-            imgurl: 'https://cdns.mtscrm.com/Ft3wKNFME8MqOo7J5kaW8qizDKx8?cdnversion=mo-1-1-2018123071802',
+            imgurl: 'https://cdns.mtscrm.com/Ft3wKNFME8MqOo7J5kaW8qizDKx8?cdnversion=mo-1-1-2018123071804',
             name: '高级理发',
             type: '默认分类',
             price: '¥100.00',

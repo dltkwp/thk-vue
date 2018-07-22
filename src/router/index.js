@@ -60,7 +60,7 @@ export const constantRouterMap = [
       hidden: true,
       path: 'product/save',
       component: () => import('@/views/product/addProduct'),
-      name: 'Product',
+      name: 'ProductSave',
       meta: { title: '商品管理', noCache: true }
     }]
   },
