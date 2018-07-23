@@ -3,8 +3,7 @@
         <el-row>
             <el-card shadow="never">
                 <div slot="header" class="clearfix">
-                    <span>编辑</span>
-                    
+                    <span>编辑商品</span>
                 </div>
                 <el-row>
                     <el-col :span="20" :offset="2">
@@ -18,7 +17,7 @@
                                 <el-option label="分类1" value="type1"></el-option>
                                 <el-option label="分类2" value="type2"></el-option>   
                             </el-select>
-                            <el-button type="text">分类管理</el-button>
+                            <el-button type="text" @click="manageType = true">分类管理</el-button>
                         </el-form-item>
                          <el-form-item label="*商品图">
                            <el-upload action="https://jsonplaceholder.typicode.com/posts/" list-type="picture-card" :on-preview="handlePictureCardPreview" :on-remove="handleRemove">
@@ -126,7 +125,31 @@
                 </el-row>
             </el-card>
         </el-row>
-    
+         <!--分类管理-->
+        <el-dialog title="分类管理" :visible.sync="manageType">
+          <el-tag :key="tag" v-for="tag in dynamicTags" closable :disable-transitions="false" @close="handleClose(tag)">
+            {{tag}}
+            </el-tag>
+            <el-input class="input-new-tag" v-if="inputVisible" v-model="inputValue" ref="saveTagInput" size="small" @keyup.enter.native="handleInputConfirm"
+            @blur="handleInputConfirm">
+            </el-input>
+          <el-button v-else class="button-new-tag" size="small" @click="showInput">新增分类</el-button>   
+        </el-dialog>
+    <!--分类管理弹出层结束-->
+      <!--从淘宝导入-->
+        <el-dialog title="导入商品" :visible.sync="importTaobao">
+            <el-form :model="pwdform">
+                <el-form-item label="淘宝链接" :label-width="formLabelWidth" class="mar-b-xs">
+                    <el-input v-model="form.pwd" placeholder="请输入淘宝链接" class="input-large"></el-input>
+                    <div class="help-block">系统将自动检测淘宝链接对应商品导入</div>
+                </el-form-item>
+            </el-form>
+            <div slot="footer" class="dialog-footer">
+                <el-button @click="importTaobao = false">取 消</el-button>
+                <el-button type="primary" @click="importTaobao = false">确 定</el-button>
+            </div>
+        </el-dialog>
+    <!--从淘宝导入弹出层结束-->
     </el-main>
 </template>
 
@@ -134,25 +157,25 @@
     export default {
       data() {
         return {
-            specDate:[{
-                spec1: '大',
-                spec2: '红'
-            },{
-                spec1: '大',
-                spec2: '黄'
-            },{
-                spec1: '大',
-                spec2: '蓝'
-            },{
-                spec1: '中',
-                spec2: '红'
-            },{
-                spec1: '中',
-                spec2: '黄'
-            },{
-                spec1: '中',
-                spec2: '蓝'
-            }],
+          specDate:[{
+            spec1: '大',
+            spec2: '红'
+          },{
+            spec1: '大',
+            spec2: '黄'
+          },{
+            spec1: '大',
+            spec2: '蓝'
+          },{
+            spec1: '中',
+            spec2: '红'
+          },{
+            spec1: '中',
+            spec2: '黄'
+          },{
+            spec1: '中',
+            spec2: '蓝'
+          }],
           specOption: [{
             value: '颜色',
             label: '颜色'
@@ -172,6 +195,7 @@
           dialogImageUrl: '',
           dialogVisible: false,
           importTaobao: false,
+          manageType: false,
           form: {
             name: '',
             region: '',
@@ -181,7 +205,10 @@
             freight: '',
             time: ''
           },
-           formLabelWidth: '120px'
+           formLabelWidth: '120px',
+            dynamicTags: ['分类1', '分类2', '分类3'],
+        inputVisible: false,
+        inputValue: ''
         }
       },
      
@@ -195,7 +222,26 @@
         handlePictureCardPreview(file) {
           this.dialogImageUrl = file.url;
           this.dialogVisible = true;
+        },
+        handleClose(tag) {
+        this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1);
+      },
+
+      showInput() {
+        this.inputVisible = true;
+        this.$nextTick(_ => {
+          this.$refs.saveTagInput.$refs.input.focus();
+        });
+      },
+
+      handleInputConfirm() {
+        let inputValue = this.inputValue;
+        if (inputValue) {
+          this.dynamicTags.push(inputValue);
         }
+        this.inputVisible = false;
+        this.inputValue = '';
+      }
       }
     }
 </script>
