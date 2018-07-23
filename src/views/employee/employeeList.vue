@@ -117,7 +117,7 @@
                 <el-button type="primary" @click="changePwd = false">确 定</el-button>
             </div>
         </el-dialog>
-    <!--编辑成员弹出层结束-->
+    <!--修改密码弹出层结束-->
     </el-main>
 </template>
 
@@ -140,8 +140,7 @@
             tel: '15242512351',
             role: '超级管理员',
             state: '停用'
-          }
-          ],
+          }],
           changeState: false,
           addMember: false,
           editMember: false,

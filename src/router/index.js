@@ -62,6 +62,12 @@ export const constantRouterMap = [
       component: () => import('@/views/product/addProduct'),
       name: 'AddProduct',
       meta: { title: '新增商品', noCache: true }
+    },{
+      hidden: true,
+      path: 'product/edit',
+      component: () => import('@/views/product/editProduct'),
+      name: 'editProduct',
+      meta: { title: '编辑商品', noCache: true }
     }]
   },
   { // 会员管理的路由设置

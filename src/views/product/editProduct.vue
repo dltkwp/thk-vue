@@ -3,8 +3,8 @@
         <el-row>
             <el-card shadow="never">
                 <div slot="header" class="clearfix">
-                    <span>新增商品</span>
-                    <el-button class="pull-right"  type="text" @click="importTaobao = true" style="padding:3px 0;">从淘宝导入</el-button>
+                    <span>编辑</span>
+                    
                 </div>
                 <el-row>
                     <el-col :span="20" :offset="2">
@@ -126,20 +126,7 @@
                 </el-row>
             </el-card>
         </el-row>
-      <!--从淘宝导入-->
-        <el-dialog title="导入商品" :visible.sync="importTaobao">
-            <el-form :model="pwdform">
-                <el-form-item label="淘宝链接" :label-width="formLabelWidth" class="mar-b-xs">
-                    <el-input v-model="form.pwd" placeholder="请输入淘宝链接" class="input-large"></el-input>
-                    <div class="help-block">系统将自动检测淘宝链接对应商品导入</div>
-                </el-form-item>
-            </el-form>
-            <div slot="footer" class="dialog-footer">
-                <el-button @click="importTaobao = false">取 消</el-button>
-                <el-button type="primary" @click="importTaobao = false">确 定</el-button>
-            </div>
-        </el-dialog>
-    <!--从淘宝导入弹出层结束-->
+    
     </el-main>
 </template>
 

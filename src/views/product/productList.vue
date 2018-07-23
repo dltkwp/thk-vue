@@ -66,7 +66,7 @@
                 <el-table-column sortable prop="state" label="状态" ></el-table-column>
                 <el-table-column fixed="right" label="操作">
                         <template slot-scope="scope">
-                            <el-button size="mini">详情</el-button>
+                             <router-link to="/product/product/edit"><el-button size="mini">编辑</el-button></router-link>
                         </template>
                 </el-table-column>
             </el-table>
