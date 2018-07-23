@@ -32,7 +32,7 @@ export const constantRouterMap = [
       path: 'dashboard',
       component: () => import('@/views/index'),
       name: 'Index',
-      meta: { title: '首页', noCache: true }
+      meta: { title: '首页', icon:'icon iconfont icon-icon',noCache: true }
     }]
   },
   { // 订单模块的路由设置
