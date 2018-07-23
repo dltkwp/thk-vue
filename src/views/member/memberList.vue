@@ -27,7 +27,6 @@
                             <el-checkbox label="等级3" name="level"></el-checkbox>
                             </el-checkbox-group>
                         </el-form-item>
-                      
                     </el-form>
                     <el-button slot="reference" size="medium">高级搜索</el-button>
                 </el-popover>
@@ -56,7 +55,7 @@
                 <el-table-column sortable prop="spacetime" label="距上次消费" ></el-table-column>
                 <el-table-column fixed="right" label="操作">
                         <template slot-scope="scope">
-                            <el-button size="mini">详情</el-button>
+                             <router-link to="/member/member/detail"><el-button size="mini">详情</el-button></router-link>
                         </template>
                 </el-table-column>
             </el-table>

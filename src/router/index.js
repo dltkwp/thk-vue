@@ -86,6 +86,13 @@ export const constantRouterMap = [
       component: () => import('@/views/member/addMember'),
       name: 'AddMember',
       meta: { title: '新增会员', noCache: true }
+    },
+    {
+      hidden: true,
+      path: 'member/detail',
+      component: () => import('@/views/member/memberDetail'),
+      name: 'MemberDetail',
+      meta: { title: '会员详情', noCache: true }
     }]
   },
   { // 成员管理的路由设置
