@@ -109,47 +109,47 @@
 
 <script>
     export default {
-        data() {
-            return {
-                specOption:[{
-                    value:'颜色',
-                    label:'颜色'
-                },{
-                    value:'尺码',
-                    label:'尺码'
-                },{
-                    value:'净含量',
-                    label:'净含量'
-                },{
-                    value:'尺寸',
-                    label:'尺寸'
-                }],
-                spec:[],
-                color:[],
-                size:[],
-                dialogImageUrl: '',
-                dialogVisible: false,
-                form: {
-                    name: '',
-                    region: '',
-                    spec: false,
-                    delivery: true,
-                    resource: '',
-                    desc: ''
-                }
-            }
-        },
-        methods: {
-            onSubmit() {
-                console.log('submit!');
-            }, 
-            handleRemove(file, fileList) {
-                console.log(file, fileList);
-            },
-            handlePictureCardPreview(file) {
-                this.dialogImageUrl = file.url;
-                this.dialogVisible = true;
-            }
+      data() {
+        return {
+          specOption: [{
+            value: '颜色',
+            label: '颜色'
+          }, {
+            value: '尺码',
+            label: '尺码'
+          }, {
+            value: '净含量',
+            label: '净含量'
+          }, {
+            value: '尺寸',
+            label: '尺寸'
+          }],
+          spec: [],
+          color: [],
+          size: [],
+          dialogImageUrl: '',
+          dialogVisible: false,
+          form: {
+            name: '',
+            region: '',
+            spec: false,
+            delivery: true,
+            resource: '',
+            desc: ''
+          }
         }
+      },
+      methods: {
+        onSubmit() {
+          console.log('submit!');
+        },
+        handleRemove(file, fileList) {
+          console.log(file, fileList);
+        },
+        handlePictureCardPreview(file) {
+          this.dialogImageUrl = file.url;
+          this.dialogVisible = true;
+        }
+      }
     }
 </script>

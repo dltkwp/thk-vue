@@ -78,7 +78,7 @@
             tel: '15242512351',
             level: '金牌会员',
             ordernum: '20',
-            spacetime: '15天'  
+            spacetime: '15天'
           }],
           form: {
             level: []

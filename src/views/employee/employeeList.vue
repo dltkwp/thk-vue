@@ -29,8 +29,8 @@
                 <el-table-column prop="name" label="姓名" ></el-table-column>
                 <el-table-column prop="tel" label="手机号" ></el-table-column>
                 <el-table-column sortable prop="role" label="角色"></el-table-column>
-                    <el-table-column sortable prop="state" label="状态"></el-table-column>
-                <el-table-column fixed="right" label="操作">
+                    <el-table-column sortable prop="state" label="状态" ></el-table-column>
+                <el-table-column fixed="right" label="操作" width="250">
                     <template slot-scope="scope">
                         <el-button size="mini" @click="editMember = true">设置</el-button>
                         <el-button size="mini">启用</el-button>
@@ -56,7 +56,7 @@
                     <el-input v-model="form.name" auto-complete="off" class="input-large"></el-input>
                 </el-form-item>
                  <el-form-item label="手机号" :label-width="formLabelWidth">
-                    <el-input v-model="form.tel" auto-complete="off" class="input-large"></el-input>
+                    <el-input v-model="form.tel" auto-complete="off" class="input-medium"></el-input>
                     <el-button>获取验证码</el-button>
                 </el-form-item>
                  <el-form-item label="验证码" :label-width="formLabelWidth">
@@ -82,7 +82,7 @@
                     <el-input v-model="form.name" auto-complete="off" class="input-large"></el-input>
                 </el-form-item>
                  <el-form-item label="手机号" :label-width="formLabelWidth">
-                    <el-input v-model="form.tel" auto-complete="off" class="input-large"></el-input>
+                    <el-input v-model="form.tel" auto-complete="off" class="input-medium"></el-input>
                     <el-button>修改手机号</el-button>
                 </el-form-item>
                  <el-form-item label="验证码" :label-width="formLabelWidth">
@@ -123,40 +123,40 @@
 
 <script>
     export default {
-        data() {
-            return {
-                type: "",
-                select: "",
-                productDate: [{
-                        id: "0000001",
-                        name: "章三",
-                        tel: "15242512351",
-                        role: "超级管理员",
-                        state: "启用"
-                    },
-                    {
-                        id: "0000002",
-                        name: "里斯",
-                        tel: "15242512351",
-                        role: "超级管理员",
-                        state: "停用"
-                    }
-                ],
-                changeState: false,
-                addMember: false,
-                editMember: false,
-                changePwd: false,
-                form: {
-                    name: "",
-                    tel: "",
-                    code: "",
-                    role: []
-                },
-                pwdform: {
-                    pwd: ""
-                },
-                formLabelWidth: "120px"
-            };
-        }
-    };
+      data() {
+        return {
+          type: '',
+          select: '',
+          productDate: [{
+            id: '0000001',
+            name: '章三',
+            tel: '15242512351',
+            role: '超级管理员',
+            state: '启用'
+          },
+          {
+            id: '0000002',
+            name: '里斯',
+            tel: '15242512351',
+            role: '超级管理员',
+            state: '停用'
+          }
+          ],
+          changeState: false,
+          addMember: false,
+          editMember: false,
+          changePwd: false,
+          form: {
+            name: '',
+            tel: '',
+            code: '',
+            role: []
+          },
+          pwdform: {
+            pwd: ''
+          },
+          formLabelWidth: '120px'
+        };
+      }
+    }
 </script>
