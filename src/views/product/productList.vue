@@ -2,22 +2,22 @@
     <el-main>
         <el-row type="flex" justify="space-between">
             <el-col :span="8">
-               <el-dropdown  @command="handleCommand">
+               <el-dropdown size="medium" @command="handleCommand">
                     <el-button size="medium">
                         操作<i class="el-icon-arrow-down el-icon--right"></i>
                     </el-button>
-                    <el-dropdown-menu slot="dropdown">
+                    <el-dropdown-menu slot="dropdown" class="m-w-90">
                         <el-dropdown-item command="sold">开售</el-dropdown-item>
-                        <el-dropdown-item command="stopSold">停售</el-dropdown-item>
+                        <el-dropdown-item command="stopSold">下架</el-dropdown-item>
                         <el-dropdown-item command="changeType">修改分类</el-dropdown-item>
                         <el-dropdown-item command="delete" >删除</el-dropdown-item>
                         <el-dropdown-item command="export" divided>导出</el-dropdown-item>
                     </el-dropdown-menu>
                 </el-dropdown>
-                <router-link to="/product/product/save" size="medium" type="primary" >新增商品</router-link>
+                <router-link to="/product/product/add"><el-button size="medium" type="primary">新增商品</el-button></router-link>
             </el-col>
             <el-col class="text-right" :span="16">
-                <el-input size="medium" placeholder="商品名称/编号" v-model="type" class="input-with-select input-large">
+                <el-input size="medium" placeholder="商品名称/编号" class="input-large">
                     <el-button slot="append" icon="el-icon-search"></el-button>
                 </el-input>
                 <el-popover placement="bottom" width="800" trigger="click">
@@ -33,13 +33,11 @@
                         <el-form-item label="状态" class="mar-b-xs"> 
                             <el-checkbox-group v-model="form.state">
                             <el-checkbox label="全部" name="state"></el-checkbox>
-                            <el-checkbox label="在售" name="state"></el-checkbox>
-                            <el-checkbox label="停售" name="state"></el-checkbox>
+                            <el-checkbox label="上架" name="state"></el-checkbox>
+                            <el-checkbox label="下架" name="state"></el-checkbox>
                             </el-checkbox-group>
                         </el-form-item>
-                      
                     </el-form>
-                    
                     <el-button slot="reference" size="medium">高级搜索</el-button>
                 </el-popover>
             </el-col>
@@ -49,11 +47,11 @@
             <el-table :data="productDate" max-height="80vh" class="table">
                 <el-table-column type="selection" width="55"></el-table-column>
                 <el-table-column sortable prop="id" label="ID" width="100"></el-table-column>
-                <el-table-column prop="img" label="商品" min-width="200" >
+                <el-table-column label="商品" min-width="200" >
                     <template slot-scope="scope">
                         <div class="media">
                             <div class="media-left">
-                                <img class="media-object img-md" src="https://cdns.mtscrm.com/Ft3wKNFME8MqOo7J5kaW8qizDKx8?cdnversion=mo-1-1-2018123071802" alt="...">
+                                <img class="media-object img-md" :src="scope.row.imgurl" alt="...">
                             </div>
                             <div class="media-body">
                                 <h4 class="media-heading">{{ scope.row.name }}</h4>
@@ -91,7 +89,7 @@
             price: '¥100.00',
             cost: '¥60.00',
             stock: '500',
-            state: '在售'
+            state: '上架'
           }, {
             id: '0000002',
             imgurl: 'https://cdns.mtscrm.com/Ft3wKNFME8MqOo7J5kaW8qizDKx8?cdnversion=mo-1-1-2018123071802',
@@ -100,7 +98,7 @@
             price: '¥120.00',
             cost: '¥40.00',
             stock: '300',
-            state: '停售'
+            state: '下架'
           }, {
             id: '0000003',
             imgurl: 'https://cdns.mtscrm.com/Ft3wKNFME8MqOo7J5kaW8qizDKx8?cdnversion=mo-1-1-2018123071802',

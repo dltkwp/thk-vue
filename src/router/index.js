@@ -58,10 +58,10 @@ export const constantRouterMap = [
     },
     {
       hidden: true,
-      path: 'product/save',
+      path: 'product/add',
       component: () => import('@/views/product/addProduct'),
-      name: 'Product',
-      meta: { title: '商品管理', noCache: true }
+      name: 'AddProduct',
+      meta: { title: '新增商品', noCache: true }
     }]
   },
   { // 会员管理的路由设置
@@ -73,6 +73,13 @@ export const constantRouterMap = [
       component: () => import('@/views/member/memberList'),
       name: 'Member',
       meta: { title: '会员管理', noCache: true }
+    },
+    {
+      hidden: true,
+      path: 'member/add',
+      component: () => import('@/views/member/addMember'),
+      name: 'AddMember',
+      meta: { title: '新增会员', noCache: true }
     }]
   },
   { // 成员管理的路由设置
@@ -94,10 +101,9 @@ export const constantRouterMap = [
       path: 'news/list',
       component: () => import('@/views/news/newsList'),
       name: 'News',
-      meta: { title: '店铺公告', noCache: true }
+      meta: { title: '店铺公告（1期不做）', noCache: true }
     }]
   },
-
   { // 首页管理的路由设置
     path: '/dashboard',
     component: Layout,
@@ -106,7 +112,7 @@ export const constantRouterMap = [
       path: 'dashboard/dashboard',
       component: () => import('@/views/dashboard/dashboard'),
       name: 'Dashboard',
-      meta: { title: '店铺装修', noCache: true }
+      meta: { title: '店铺装修（1期不做）', noCache: true }
     }]
   },
   {
@@ -139,6 +145,12 @@ export const constantRouterMap = [
         name: 'FinanceConfig', // 这个位置必须唯一
         component: () => import('@/views/setting/financeConfig'), // 页面地址，一般命名规则:主模块文件夹/功能模块的文件夹（最好带上主文件模块的名称，为了调试）
         meta: { title: '财务设置' }
+      },
+      {
+        path: 'employee', // 期望的访问的地址
+        name: 'EmployeeConfig', // 这个位置必须唯一
+        component: () => import('@/views/setting/employeeConfig'), // 页面地址，一般命名规则:主模块文件夹/功能模块的文件夹（最好带上主文件模块的名称，为了调试）
+        meta: { title: '成员设置(1期不做）' }
       }
     ]
   },
